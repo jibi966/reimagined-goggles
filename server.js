@@ -19,7 +19,7 @@ app.get("*", (req, res) => {
 
 app.listen(PORT, async () => {
   try {
-    // await db here
+    // add db con
     console.log("Server listening on port", PORT);
   } catch (error) {
     console.log("Error Connecting", error);
