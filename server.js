@@ -2,6 +2,7 @@ const express = require("express");
 const path = require("path");
 const app = express();
 const mongoose = require("mongoose");
+const { connect } = require("./configs/db.config");
 require("dotenv").config();
 
 const PORT = process.env.PORT || 3000;
@@ -19,7 +20,7 @@ app.get("*", (req, res) => {
 
 app.listen(PORT, async () => {
   try {
-    // add db con
+    await connect();
     console.log("Server listening on port", PORT);
   } catch (error) {
     console.log("Error Connecting", error);
